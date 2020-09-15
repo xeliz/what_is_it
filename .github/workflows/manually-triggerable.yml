@@ -18,7 +18,8 @@ jobs:
           echo Add other actions to build,
           echo test, and deploy your project.
       - name: Generate file
-        run: echo "artifact file data: ${{github.event.inputs.name}}" > output.txt
+        run: |
+          echo "artifact file data: ${{github.event.inputs.name}}" > output.txt
       - uses: actions/upload-artifact@v2
         with:
           name: output
